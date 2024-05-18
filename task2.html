@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Website Landing Page - With Background Video Slider | Travel</title>
+        <link rel="stylesheet" href="task2.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+        
+        <header>
+            <a href="#" class="brand">Travel</a>
+            <div class="menu-bar" onclick="menuBar"
+                <i class="fa-solid fa-bars"></i></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Explore</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+            <video class="video- slide active" src="http://192.168.0.227:8000/island.mp4"" autoplay muted loop></video>
+            <video class="video- slide" src="http://192.168.0.227:8000/camp.mp4"" autoplay muted loop></video>
+            <video class="video- slide" src="http://192.168.0.227:8000/roadtrip.mp4"" autoplay muted loop></video>
+            <video class="video- slide" src="http://192.168.0.227:8000/adventure.mp4"" autoplay muted loop></video>
+            <video class="video- slide" src="http://192.168.0.227:8000/nature.mp4"" autoplay muted loop></video>
+            <div class="content">
+                <h1>Unplug and Unwind:<br><span> Island Life at its Finest</span></h1>
+                <p>Nature is a vast and intricate tapestry, woven with diverse ecosystems and 
+                habitats, each teeming with life. From the towering majesty of ancient forests 
+                to the serene depths of coral reefs, its beauty is boundless and awe-inspiring.</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Reconnecting with the Wild:<br><span>Camping Expedition </span></h1>
+                <p>Disconnect from the digital world and reconnect with the great outdoors.
+                Embrace the simplicity of life surrounded by towering trees and tranquil lakes.
+                Camping offers a chance to rejuvenate, explore, and create lasting memories with loved ones.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Paving New Paths: <br><span>A Road Trip Discovery </span></h1>
+                <p>Embark on an adventure where the journey is the destination.
+                Wind through scenic routes, discover hidden gems, and create lasting memories.
+                 A road trip offers the ultimate freedom to explore, wander, and embrace the unknown.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Unleashing Potential:<br><span>An Adventure of Self-Discovery</span></h1>
+                <p>Adventure beckons those with an insatiable thirst for the unknown.
+                It challenges us to step outside our comfort zones and embrace the thrill of the extraordinary.
+                An adventure is a journey of self-discovery, where limits are pushed and memories are etched forever.</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Whispers from the Earth:<br><span> Nature's Poetic Narrative</span></h1>
+                <p>Nature is a kaleidoscope of beauty, ever-changing and captivating.
+                From lush forests to towering mountains, it offers a sanctuary of tranquility and wonder.
+                Immersing oneself in nature rejuvenates the soul and reminds us of life's simple pleasures.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="media-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active" ></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+        
+        const menuBar = document.querySelector(".menu-bar");
+        const navigation = document.querySelector(".navigation");
+        
+        menuBar.addEventListener("click", () => {
+            menuBar.classList.toggle("active");
+            navigation.classList.toggle("active");
+});
+
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".video-slide");
+const content = document.querySelectorAll(".content");
+
+var sliderNav = function(manual) {
+    btns.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+
+    contents.forEach((content) => {
+        content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        sliderNav(i);
+    });
+});
+
+
+        </script>
+
+    </body>
+</html>
